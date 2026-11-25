@@ -1,0 +1,24 @@
+node_modules/
+dist/
+dist-*/
+build/
+coverage/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+*.tgz
+
+# Local data & state directories
+.uad-data/
+plans/
+tokens/
+backups/
+restore-scripts/
+reports/
+.uad-data/audit/
+audit/
+!src/audit/
+.aistudio/
+.playwright-cli/
