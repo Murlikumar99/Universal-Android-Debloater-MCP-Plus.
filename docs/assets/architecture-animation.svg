@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="100%" height="440" role="img" aria-label="Universal Android Debloater MCP Animated Architecture">
+  <style>
+    .bg { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+    .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; }
+    .card { fill: #ffffff; stroke: #0f172a; stroke-width: 1.75; }
+    .card-safe { fill: #f0fdf4; stroke: #15803d; stroke-width: 1.75; }
+    .card-warn { fill: #fffbeb; stroke: #b45309; stroke-width: 1.75; }
+    .card-accent { fill: #f0f9ff; stroke: #0369a1; stroke-width: 1.75; }
+    .title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+    .subtitle { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 11.5px; font-weight: 600; fill: #334155; }
+    .label { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 11px; fill: #475569; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; fill: #0f172a; }
+    .mono-accent { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 600; fill: #0369a1; }
+    .mono-safe { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 600; fill: #15803d; }
+    .mono-warn { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 600; fill: #b45309; }
+    .wire { fill: none; stroke: #cbd5e1; stroke-width: 2; }
+    .wire-flow { fill: none; stroke: #0369a1; stroke-width: 2.25; stroke-dasharray: 8 8; animation: dashFlow 1.6s linear infinite; }
+    .wire-flow-safe { fill: none; stroke: #15803d; stroke-width: 2.25; stroke-dasharray: 8 8; animation: dashFlow 1.6s linear infinite; }
+    .wire-flow-warn { fill: none; stroke: #b45309; stroke-width: 2.25; stroke-dasharray: 6 6; animation: dashFlow 1.4s linear infinite; }
+    .pulse-dot { fill: #15803d; animation: pulseOpacity 2s ease-in-out infinite; }
+    .pulse-dot-blue { fill: #0369a1; animation: pulseOpacity 1.5s ease-in-out infinite; }
+    .badge { fill: #0f172a; }
+    .badge-text { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; fill: #ffffff; }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -32; }
+    }
+    @keyframes pulseOpacity {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
+    }
+  </style>
+
+  <!-- Outer Frame -->
+  <rect x="4" y="4" width="952" height="432" rx="10" class="bg" />
+
+  <!-- Top Header Bar -->
+  <rect x="20" y="18" width="920" height="42" rx="6" class="panel" />
+  <circle cx="40" cy="39" r="5" class="pulse-dot" />
+  <text x="54" y="44" class="title">SYSTEM ARCHITECTURE — DEFENSE-IN-DEPTH MCP STDIO &amp; ADB EXECUTION PIPELINE</text>
+  <rect x="802" y="27" width="124" height="24" rx="4" class="badge" />
+  <text x="814" y="43" class="badge-text">STDIO JSON-RPC</text>
+
+  <!-- Column 1: AI Coding Agents & Web Console -->
+  <rect x="20" y="76" width="200" height="340" rx="8" class="panel" />
+  <text x="36" y="100" class="subtitle">1. CLIENT LAYER</text>
+
+  <rect x="34" y="114" width="172" height="84" rx="6" class="card" />
+  <text x="46" y="134" class="subtitle">AI MCP Clients</text>
+  <text x="46" y="152" class="label">- Claude Desktop / Code</text>
+  <text x="46" y="168" class="label">- Google Antigravity</text>
+  <text x="46" y="184" class="label">- Cursor / Windsurf / Codex</text>
+
+  <rect x="34" y="212" width="172" height="90" rx="6" class="card-accent" />
+  <text x="46" y="232" class="subtitle">Human Operator CLI</text>
+  <text x="46" y="250" class="mono">npx tsx src/index.ts</text>
+  <text x="46" y="266" class="mono-accent">approve &lt;plan-id&gt;</text>
+  <text x="46" y="286" class="label">Issues 10-min single-use token</text>
+
+  <rect x="34" y="316" width="172" height="84" rx="6" class="card" />
+  <text x="46" y="336" class="subtitle">Web Control Console</text>
+  <text x="46" y="354" class="mono">http://localhost:3000</text>
+  <text x="46" y="372" class="label">HttpOnly Session + CSRF</text>
+  <text x="46" y="388" class="label">Rate-Limited Proxy API</text>
+
+  <!-- Animated Wires Col 1 -> Col 2 -->
+  <path d="M 206 156 L 266 156" class="wire" />
+  <path d="M 206 156 L 266 156" class="wire-flow" />
+  <text x="212" y="148" class="mono-accent">fd 0/1</text>
+
+  <path d="M 206 256 L 266 256" class="wire" />
+  <path d="M 206 256 L 266 256" class="wire-flow-warn" />
+  <text x="212" y="248" class="mono-warn">token</text>
+
+  <path d="M 206 356 L 266 356" class="wire" />
+  <path d="M 206 356 L 266 356" class="wire-flow" />
+  <text x="212" y="348" class="mono">/api/*</text>
+
+  <!-- Column 2: MCP Server & Safety Engine -->
+  <rect x="266" y="76" width="414" height="340" rx="8" class="panel" />
+  <text x="284" y="100" class="subtitle">2. ANDROID-DEBLOATER-MCP CORE ENGINE (23 TOOLS)</text>
+  <circle cx="658" cy="95" r="5" class="pulse-dot-blue" />
+
+  <!-- Box 2A: Pinned Community Lists -->
+  <rect x="282" y="114" width="184" height="106" rx="6" class="card" />
+  <text x="294" y="134" class="subtitle">Pinned Debloat Lists</text>
+  <text x="294" y="152" class="mono">- UAD-NG (e1fff1ef)</text>
+  <text x="294" y="168" class="mono">- AppManager (10c82498)</text>
+  <text x="294" y="184" class="mono">- Canta (e3ed0c9b)</text>
+  <text x="294" y="204" class="mono-safe">Most Conservative Wins</text>
+
+  <!-- Box 2B: 4-Tier Safety Engine -->
+  <rect x="480" y="114" width="184" height="106" rx="6" class="card-safe" />
+  <text x="492" y="134" class="subtitle">4-Tier Safety Classifier</text>
+  <text x="492" y="152" class="mono-safe">1. Safe / Probably Safe</text>
+  <text x="492" y="168" class="mono-warn">2. Risky (Ack Required)</text>
+  <text x="492" y="184" class="mono">3. Hard-Protected Lock</text>
+  <text x="492" y="204" class="mono">4. Role &amp; IME Guard</text>
+
+  <!-- Box 2C: Planner & Out-of-Band Token Gate -->
+  <rect x="282" y="234" width="184" height="86" rx="6" class="card-warn" />
+  <text x="294" y="254" class="subtitle">Immutable Planner</text>
+  <text x="294" y="272" class="mono">SHA-256 Plan Digest</text>
+  <text x="294" y="288" class="mono">Serial + Build Bound</text>
+  <text x="294" y="306" class="mono-warn">AI Self-Approve Blocked</text>
+
+  <!-- Box 2D: Backup, Allowlist Executor & Audit -->
+  <rect x="480" y="234" width="184" height="86" rx="6" class="card-accent" />
+  <text x="492" y="254" class="subtitle">Allowlist Executor</text>
+  <text x="492" y="272" class="mono">1. Pull APK + SHA-256</text>
+  <text x="492" y="288" class="mono">2. execFile(['-s', ...])</text>
+  <text x="492" y="306" class="mono-accent">3. Health Check &amp; Rollback</text>
+
+  <!-- Box 2E: Hash-Chained Audit Log -->
+  <rect x="282" y="334" width="382" height="66" rx="6" class="card" />
+  <text x="294" y="354" class="subtitle">Tamper-Evident SHA-256 Hash-Chained Audit Log &amp; Pino Stderr Logger</text>
+  <text x="294" y="372" class="mono">GENESIS_0000 -&gt; entryHash[n-1] -&gt; sha256(prevHash + payload) [JSONL]</text>
+  <text x="294" y="388" class="label">Strict fd 2 stderr logging prevents JSON-RPC stdout stream corruption</text>
+
+  <!-- Animated Wires Col 2 -> Col 3 -->
+  <path d="M 680 180 L 736 180" class="wire" />
+  <path d="M 680 180 L 736 180" class="wire-flow" />
+  <text x="685" y="172" class="mono">inspect</text>
+
+  <path d="M 680 276 L 736 276" class="wire" />
+  <path d="M 680 276 L 736 276" class="wire-flow-safe" />
+  <text x="685" y="268" class="mono-safe">--user 0</text>
+
+  <!-- Column 3: Android Device Layer -->
+  <rect x="736" y="76" width="204" height="340" rx="8" class="panel" />
+  <text x="752" y="100" class="subtitle">3. ANDROID 8.0+ TARGET</text>
+
+  <rect x="750" y="114" width="176" height="92" rx="6" class="card" />
+  <text x="762" y="134" class="subtitle">USB / Wireless ADB</text>
+  <text x="762" y="152" class="mono">ro.build.fingerprint</text>
+  <text x="762" y="168" class="mono">/proc/meminfo &amp; cpu</text>
+  <text x="762" y="184" class="mono">dumpsys package</text>
+  <text x="762" y="198" class="mono">cmd role holders</text>
+
+  <rect x="750" y="220" width="176" height="92" rx="6" class="card-safe" />
+  <text x="762" y="240" class="subtitle">Reversible User 0 Ops</text>
+  <text x="762" y="258" class="mono-safe">pm uninstall -k --user 0</text>
+  <text x="762" y="274" class="mono-safe">pm disable-user --user 0</text>
+  <text x="762" y="290" class="mono">install-existing --user 0</text>
+  <text x="762" y="304" class="mono">pm enable --user 0</text>
+
+  <rect x="750" y="326" width="176" height="74" rx="6" class="card" />
+  <text x="762" y="346" class="subtitle">Supported OEM Skins</text>
+  <text x="762" y="364" class="label">One UI, MIUI, HyperOS,</text>
+  <text x="762" y="380" class="label">ColorOS, OxygenOS,</text>
+  <text x="762" y="394" class="label">OriginOS, Pixel AOSP</text>
+</svg>
