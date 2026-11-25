@@ -1,0 +1,270 @@
+{
+  "version": "1.0.0",
+  "profiles": [
+    {
+      "id": "samsung",
+      "name": "Samsung (One UI)",
+      "manufacturers": ["samsung"],
+      "skinProperties": ["ro.build.version.oneui", "ro.build.version.sep"],
+      "namespaces": ["com.samsung.", "com.sec.", "com.knox.", "com.osp."],
+      "alwaysUnsafe": [
+        "com.osp.app.signin",
+        "com.sec.android.app.launcher",
+        "com.samsung.android.honeyboard",
+        "com.sec.android.app.camera",
+        "com.samsung.android.incallui",
+        "com.samsung.android.dialer",
+        "com.samsung.android.messaging",
+        "com.sec.imsservice",
+        "com.wssyncmldm",
+        "com.sec.android.soagent",
+        "com.samsung.android.biometrics.app.setting",
+        "com.samsung.android.knox.containercore",
+        "com.samsung.android.kgclient"
+      ],
+      "cautionPackages": {
+        "com.samsung.android.scloud": "Removing breaks Samsung Cloud backup and Smart Switch synchronization.",
+        "com.samsung.android.themestore": "Removing breaks custom One UI themes and icon packs.",
+        "com.samsung.android.app.routines": "Removing disables Modes and Routines automation.",
+        "com.samsung.android.smartswitchassistant": "Removing breaks cable/wireless migration via Smart Switch."
+      },
+      "safeBloatExamples": [
+        "com.samsung.android.game.gamehome",
+        "com.samsung.android.app.spage",
+        "com.samsung.android.aremoji",
+        "com.samsung.android.kidsinstaller"
+      ],
+      "notes": "Knox core components, Samsung Account (com.osp.app.signin), and IMS telephony services must never be removed."
+    },
+    {
+      "id": "xiaomi",
+      "name": "Xiaomi / Redmi / POCO (MIUI & HyperOS)",
+      "manufacturers": ["xiaomi", "redmi", "poco", "blackshark"],
+      "skinProperties": ["ro.miui.ui.version.name", "ro.mi.os.version.name"],
+      "namespaces": ["com.miui.", "com.xiaomi.", "com.mi.", "com.lbe.security.miui"],
+      "alwaysUnsafe": [
+        "com.miui.securitycenter",
+        "com.miui.securitycore",
+        "com.lbe.security.miui",
+        "com.xiaomi.finddevice",
+        "com.xiaomi.account",
+        "com.miui.home",
+        "com.miui.packageinstaller",
+        "com.miui.powerkeeper"
+      ],
+      "cautionPackages": {
+        "com.miui.daemon": "Telemetry daemon; removing is common on MIUI but can affect battery stats on some HyperOS builds.",
+        "com.miui.cloudservice": "Required for Mi Cloud sync; do not remove if Mi Account sync is active.",
+        "com.xiaomi.xmsf": "Xiaomi Service Framework; removing breaks push notifications for MIUI system apps."
+      },
+      "safeBloatExamples": [
+        "com.miui.msa.global",
+        "com.miui.analytics",
+        "com.xiaomi.mipicks",
+        "com.mi.globalbrowser",
+        "com.miui.videoplayer",
+        "com.miui.player"
+      ],
+      "notes": "CRITICAL: Never remove com.miui.securitycenter, com.xiaomi.finddevice, or com.xiaomi.account on MIUI/HyperOS—doing so causes an immediate bootloop requiring recovery wipe."
+    },
+    {
+      "id": "oppo_realme_oneplus",
+      "name": "OPPO / Realme / OnePlus (ColorOS / Realme UI / OxygenOS)",
+      "manufacturers": ["oppo", "realme", "oneplus", "oplus"],
+      "skinProperties": ["ro.build.version.opporom", "ro.build.version.oplusrom", "ro.oxygen.version", "ro.build.version.realmeui"],
+      "namespaces": ["com.oppo.", "com.coloros.", "com.heytap.", "com.realme.", "com.oneplus.", "com.oplus."],
+      "alwaysUnsafe": [
+        "com.heytap.usercenter",
+        "com.oplus.account",
+        "com.oppo.launcher",
+        "com.android.launcher",
+        "com.oppo.camera",
+        "com.oneplus.camera",
+        "com.coloros.safecenter",
+        "com.oplus.safecenter"
+      ],
+      "cautionPackages": {
+        "com.heytap.cloud": "Breaks HeyTap Cloud backup and photo sync.",
+        "com.coloros.smartsidebar": "Disables the Smart Sidebar floating panel."
+      },
+      "safeBloatExamples": [
+        "com.heytap.market",
+        "com.heytap.browser",
+        "com.coloros.gamespaceui",
+        "com.oppo.music"
+      ],
+      "notes": "ColorOS, Realme UI, and OxygenOS 12+ share the Oplus framework. Require 'Disable Permission Monitoring' enabled in Developer Options for ADB commands."
+    },
+    {
+      "id": "originos",
+      "name": "Vivo / iQOO (OriginOS)",
+      "manufacturers": ["vivo", "iqoo", "bbk"],
+      "skinProperties": ["ro.vivo.os.name", "ro.vivo.os.build.display.id", "ro.vivo.os.version"],
+      "namespaces": ["com.vivo.", "com.bbk.", "com.iqoo."],
+      "alwaysUnsafe": [
+        "com.bbk.account",
+        "com.vivo.launcher",
+        "com.bbk.launcher2",
+        "com.vivo.camera",
+        "com.iqoo.secure",
+        "com.vivo.secure",
+        "com.vivo.permissionmanager",
+        "com.vivo.ups",
+        "com.vivo.fingerprint",
+        "com.vivo.faceunlock",
+        "com.vivo.daemonService"
+      ],
+      "cautionPackages": {
+        "com.vivo.abe": "Abnormal Behavior Engine (AI power & thermal scheduling); can be frozen for extra performance, but may affect dynamic frame rate scaling.",
+        "com.vivo.weather": "OriginOS Atomic weather widgets and lock screen climate info.",
+        "com.vivo.assistant": "Jovi Voice Assistant and smart suggestion cards.",
+        "com.bbk.theme": "iTheme Theme Store; disabling prevents changing custom OriginOS fonts and icon packs.",
+        "com.vivo.appstore": "V-Appstore; required for official OTA updates of pre-installed Vivo system apps."
+      },
+      "safeBloatExamples": [
+        "com.android.bbklog",
+        "com.bbk.iqoo.logsystem",
+        "com.vivo.nps",
+        "com.vivo.epm",
+        "com.vivo.networkimprove",
+        "com.vivo.browser",
+        "com.vivo.game",
+        "com.baidu.duersdk.opensdk",
+        "com.baidu.input_vivo"
+      ],
+      "notes": "OriginOS requires com.bbk.account, com.vivo.launcher (Atomic Desktop), and com.vivo.permissionmanager to remain intact. Extensive background logging daemons (bbklog, logsystem, nps, epm, networkimprove) can be safely disabled."
+    },
+    {
+      "id": "funtouchos",
+      "name": "Vivo / iQOO (FuntouchOS)",
+      "manufacturers": ["vivo", "iqoo", "bbk"],
+      "skinProperties": ["ro.vivo.os.build.display.id", "ro.vivo.os.name"],
+      "namespaces": ["com.vivo.", "com.bbk.", "com.iqoo."],
+      "alwaysUnsafe": [
+        "com.bbk.account",
+        "com.vivo.launcher",
+        "com.bbk.launcher2",
+        "com.vivo.camera",
+        "com.iqoo.secure",
+        "com.vivo.secure",
+        "com.vivo.permissionmanager"
+      ],
+      "cautionPackages": {
+        "com.vivo.abe": "Abnormal Behavior Engine; AI performance daemon.",
+        "com.vivo.weather": "Lock-screen weather widgets.",
+        "com.vivo.assistant": "Jovi Assistant services."
+      },
+      "safeBloatExamples": [
+        "com.android.bbklog",
+        "com.vivo.browser",
+        "com.vivo.appstore",
+        "com.vivo.game",
+        "com.vivo.nps"
+      ],
+      "notes": "Vivo Global FuntouchOS devices protect com.bbk.account and com.vivo.permissionmanager; removing them causes boot or activation lockouts."
+    },
+    {
+      "id": "pixel_aosp_motorola",
+      "name": "Google Pixel / Motorola / Nothing / Sony / Asus (AOSP-derived)",
+      "manufacturers": ["google", "motorola", "nothing", "sony", "asus", "tecno", "infinix", "huawei", "honor"],
+      "skinProperties": ["ro.build.Characteristics", "ro.mot.build.customerid", "ro.nothing.version.id"],
+      "namespaces": ["com.google.android.", "com.motorola.", "com.nothing.", "com.sonymobile.", "com.asus."],
+      "alwaysUnsafe": [
+        "com.google.android.apps.nexuslauncher",
+        "com.nothing.launcher",
+        "com.motorola.launcher3",
+        "com.google.android.GoogleCamera",
+        "com.google.android.gms",
+        "com.android.vending"
+      ],
+      "cautionPackages": {
+        "com.google.android.as": "Android System Intelligence (Live Caption, Now Playing, Smart Autorotate).",
+        "com.motorola.actions": "Moto Actions gestures (chop for flashlight, twist for camera)."
+      },
+      "safeBloatExamples": [
+        "com.google.android.videos",
+        "com.google.android.apps.tachyon",
+        "com.google.android.music",
+        "com.facebook.services",
+        "com.facebook.appmanager",
+        "com.facebook.system"
+      ],
+      "notes": "Standard AOSP rules apply. Ensure at least one launcher, browser, dialer, SMS app, and input method remain enabled."
+    },
+    {
+      "id": "google_tv_android_tv",
+      "name": "Android TV & Google TV (Chromecast, Sony Bravia, TCL, Hisense, Shield TV)",
+      "manufacturers": ["google", "sony", "tcl", "hisense", "nvidia", "oneplus"],
+      "skinProperties": ["ro.build.characteristics", "ro.vendor.product.device"],
+      "namespaces": ["com.google.android.tv", "com.google.android.videos", "com.samba.tv", "com.sony.dtv.", "com.tcl.", "com.nvidia."],
+      "alwaysUnsafe": [
+        "com.android.tv.settings",
+        "com.google.android.tv.settings",
+        "com.google.android.tv.frameworkpackagestubs",
+        "com.google.android.tv.remote.service",
+        "com.google.android.tv.btservices",
+        "com.google.android.apps.mediashell",
+        "com.android.tv.inputs"
+      ],
+      "cautionPackages": {
+        "com.google.android.katniss": "Google Assistant on TV; disabling turns off remote microphone voice search.",
+        "com.google.android.tungsten.setupwraith": "TV initial setup wizard; safe to disable only after initial setup is complete."
+      },
+      "safeBloatExamples": [
+        "com.google.android.tvrecommendations",
+        "com.google.android.videos",
+        "com.samba.tv",
+        "com.sony.dtv.recommendations",
+        "com.sony.dtv.bravialife",
+        "com.tcl.partnercustomizer",
+        "com.tcl.tvmanager",
+        "com.tcl.customad",
+        "com.nvidia.feedbackclient"
+      ],
+      "notes": "Inspired by CleanYourTV (Gathin23/cleanyourtv). Disables sponsored home-screen rows, Google TV movie store ads, and vendor ACR tracking (Samba TV) over Wi-Fi while preserving HDMI inputs, Chromecast (mediashell), and remote pairing."
+    },
+    {
+      "id": "xiaomi_mitv_patchwall",
+      "name": "Xiaomi / Redmi TV (PatchWall OS)",
+      "manufacturers": ["xiaomi", "redmi"],
+      "skinProperties": ["ro.mitv.ui.version.name"],
+      "namespaces": ["com.xiaomi.mitv.", "com.mitv."],
+      "alwaysUnsafe": [
+        "com.mitv.tvhome.settings",
+        "com.xiaomi.mitv.inputmethod"
+      ],
+      "cautionPackages": {
+        "com.mitv.tvhome": "PatchWall default TV launcher; disable only if an alternative launcher (e.g. Projectivy Launcher or CleanYourTV Minimalist Launcher) is installed and set as default."
+      },
+      "safeBloatExamples": [
+        "com.xiaomi.mitv.advertise",
+        "com.xiaomi.mitv.upgrade",
+        "com.mitv.videoplayer",
+        "com.xiaomi.mitv.shop",
+        "com.mitv.gallery"
+      ],
+      "notes": "PatchWall TV injects ad rows and upgrade prompts. Disabling com.xiaomi.mitv.advertise strips ad banners."
+    },
+    {
+      "id": "amazon_firetv",
+      "name": "Amazon Fire TV (Fire OS)",
+      "manufacturers": ["amazon"],
+      "skinProperties": ["ro.build.version.fireos"],
+      "namespaces": ["com.amazon."],
+      "alwaysUnsafe": [
+        "com.amazon.tv.settings",
+        "com.amazon.tv.launcher",
+        "com.amazon.whisperplay.contracts"
+      ],
+      "cautionPackages": {
+        "com.amazon.vizzini": "Amazon Voice/Alexa service on Fire TV."
+      },
+      "safeBloatExamples": [
+        "com.amazon.device.sale.service",
+        "com.amazon.advertising.admanager",
+        "com.amazon.whisperjoin.middleware"
+      ],
+      "notes": "Disables Amazon ad manager and telemetry services over ADB while maintaining Fire TV remote and core settings."
+    }
+  ]
+}
