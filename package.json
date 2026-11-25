@@ -1,7 +1,7 @@
 {
   "name": "android-debloater-mcp",
   "version": "1.0.0",
-  "description": "Universal Android Debloater Model Context Protocol (MCP) Server over ADB",
+  "description": "MCP server for AI-assisted Android device inspection, package analysis, safe debloating, ADB automation, APK backup and restore.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
