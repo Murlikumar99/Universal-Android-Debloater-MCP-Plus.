@@ -1,16 +1,26 @@
-# Universal Android Debloater MCP Server
+# Universal Android Debloater MCP Plus
 
-An open-source Model Context Protocol (MCP) server that empowers AI coding assistants (such as Claude Desktop, Claude Code, Cursor, and Windsurf) to inspect, audit, classify, and safely debloat Android 8.0+ devices over USB and Wireless ADB.
+[![Node.js](https://img.shields.io/badge/Node.js-20%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![MCP](https://img.shields.io/badge/Protocol-Model%20Context%20Protocol-6B5CE7)](https://modelcontextprotocol.io/)
+[![ADB](https://img.shields.io/badge/Android-ADB-3DDC84?logo=android&logoColor=white)](https://developer.android.com/tools/adb)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+An open-source **Model Context Protocol (MCP) server for Android debloating and device management**. Connect AI assistants to Android devices through **Android Debug Bridge (ADB)** over USB or Wi-Fi. Inspect installed packages, analyze OEM-specific apps, review permissions, create auditable removal plans, back up APKs, and restore packages with explicit human approval.
+
+Designed for Android 8.0+ and AI development clients such as Claude Desktop, Claude Code, Cursor, and other MCP-compatible clients.
 
 ---
 
 ## Table of Contents
 1. [Overview](#overview)
-2. [Prerequisites](#prerequisites)
-3. [Installation & Build](#installation--build)
-4. [MCP Integration](#mcp-integration)
-5. [Verification Steps](#verification-steps)
-6. [Safety & Debloat Workflow](#safety--debloat-workflow)
+2. [Features](#features)
+3. [Prerequisites](#prerequisites)
+4. [Installation & Build](#installation--build)
+5. [MCP Integration](#mcp-integration)
+6. [Verification Steps](#verification-steps)
+7. [Safety & Debloat Workflow](#safety--debloat-workflow)
+8. [Repository Topics and Keywords](#repository-topics-and-keywords)
 
 ---
 
@@ -26,7 +36,19 @@ The **Universal Android Debloater MCP Server** bridges Model Context Protocol cl
 
 ---
 
-## 2. Prerequisites
+## 2. Features
+
+- **Device discovery:** detect Android devices connected over USB or Wireless ADB.
+- **Device intelligence:** inspect manufacturer, model, Android version, OEM skin, and device resources.
+- **Package inventory:** list installed apps and inspect package metadata and permissions.
+- **OEM-aware classification:** use curated safety data and supported community list sources to help classify packages.
+- **Removal planning:** generate reviewable plans with SHA-256 integrity hashes.
+- **Human approval:** require a separate, explicit terminal approval step before destructive operations.
+- **APK backup and restore:** back up supported APK artifacts and provide recovery workflows.
+- **Auditability:** maintain structured audit records for important operations.
+- **MCP integration:** expose Android management capabilities to compatible AI assistants.
+
+## 3. Prerequisites
 
 Before setting up the server, ensure your environment meets the following requirements and verify them using the provided commands:
 
@@ -45,14 +67,14 @@ Before setting up the server, ensure your environment meets the following requir
 
 ---
 
-## 3. Installation & Build
+## 4. Installation & Build
 
 Follow these step-by-step instructions to download, build, and package the server:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Murlikumar99/Universal-Android-Debloater-MCP-Server-.git
-   cd Universal-Android-Debloater-MCP-Server-
+   git clone https://github.com/Murlikumar99/Universal-Android-Debloater-MCP-Plus..git
+   cd Universal-Android-Debloater-MCP-Plus.
    ```
 2. Install dependencies:
    ```bash
@@ -71,7 +93,7 @@ Follow these step-by-step instructions to download, build, and package the serve
 
 ---
 
-## 4. MCP Integration
+## 5. MCP Integration
 
 Configure your MCP client to launch the compiled server binary via Node.js. Replace `/path/to/repo/dist/index.js` with your actual absolute path.
 
@@ -101,7 +123,7 @@ Configure your MCP client to launch the compiled server binary via Node.js. Repl
 
 ---
 
-## 5. Verification Steps
+## 6. Verification Steps
 
 To verify that the MCP tools are successfully loaded and communicating with your device in your IDE:
 
@@ -114,7 +136,7 @@ To verify that the MCP tools are successfully loaded and communicating with your
 
 ---
 
-## 6. Safety & Debloat Workflow
+## 7. Safety & Debloat Workflow
 
 The server implements a strict defense-in-depth safety architecture:
 
@@ -128,6 +150,14 @@ The server implements a strict defense-in-depth safety architecture:
 4. **Emergency Restoration**: Any removed package can be restored at any time via `execute_restore`, auto-generated recovery scripts (`bash restore-<planId>.sh`), or manual ADB commands (`adb shell cmd package install-existing --user 0 <package>`).
 
 ---
+
+## Repository Topics and Keywords
+
+Suggested GitHub repository topics:
+
+`android` · `android-debloater` · `android-debloat` · `android-debug-bridge` · `adb` · `wireless-adb` · `mcp` · `model-context-protocol` · `mcp-server` · `typescript` · `nodejs` · `ai-tools` · `claude` · `cursor` · `android-automation` · `android-tools` · `app-manager` · `open-source`
+
+**Search keywords:** Android debloater, Universal Android Debloater, Android bloatware removal, ADB debloat tool, Android package manager, Wireless ADB, MCP server, Model Context Protocol, AI Android assistant, Android app removal, APK backup, Android app restore, OEM debloat, Samsung debloat, Xiaomi debloat, Vivo debloat, TypeScript MCP.
 
 ## License
 MIT
