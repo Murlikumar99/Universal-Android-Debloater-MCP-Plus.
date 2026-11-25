@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="100%" height="320" role="img" aria-label="6-Stage Safe Debloat &amp; Out-of-Band Approval Workflow Animation">
+  <style>
+    .bg { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+    .header { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; }
+    .step-box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.75; }
+    .title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 14px; font-weight: 700; fill: #0f172a; }
+    .step-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; fill: #ffffff; }
+    .step-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 12.5px; font-weight: 700; fill: #0f172a; }
+    .step-desc { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 11px; fill: #475569; }
+    .step-cmd { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; fill: #0369a1; }
+    .connector { stroke: #cbd5e1; stroke-width: 2; fill: none; }
+    .connector-active { stroke: #0f172a; stroke-width: 2.5; stroke-dasharray: 6 6; fill: none; animation: flowLine 1.2s linear infinite; }
+
+    .highlight-1 { animation: stepGlow1 9s infinite; }
+    .highlight-2 { animation: stepGlow2 9s infinite; }
+    .highlight-3 { animation: stepGlow3 9s infinite; }
+    .highlight-4 { animation: stepGlow4 9s infinite; }
+    .highlight-5 { animation: stepGlow5 9s infinite; }
+    .highlight-6 { animation: stepGlow6 9s infinite; }
+
+    @keyframes flowLine {
+      to { stroke-dashoffset: -24; }
+    }
+    @keyframes stepGlow1 {
+      0%, 15% { stroke: #0369a1; stroke-width: 3; fill: #f0f9ff; }
+      16%, 100% { stroke: #cbd5e1; stroke-width: 1.75; fill: #ffffff; }
+    }
+    @keyframes stepGlow2 {
+      0%, 16% { stroke: #cbd5e1; stroke-width: 1.75; fill: #ffffff; }
+      17%, 32% { stroke: #0369a1; stroke-width: 3; fill: #f0f9ff; }
+      33%, 100% { stroke: #cbd5e1; stroke-width: 1.75; fill: #ffffff; }
+    }
+    @keyframes stepGlow3 {
+      0%, 33% { stroke: #cbd5e1; stroke-width: 1.75; fill: #ffffff; }
+      34%, 49% { stroke: #0369a1; stroke-width: 3; fill: #f0f9ff; }
+      50%, 100% { stroke: #cbd5e1; stroke-width: 1.75; fill: #ffffff; }
+    }
+    @keyframes stepGlow4 {
+      0%, 50% { stroke: #cbd5e1; stroke-width: 1.75; fill: #ffffff; }
+      51%, 66% { stroke: #b45309; stroke-width: 3; fill: #fffbeb; }
+      67%, 100% { stroke: #cbd5e1; stroke-width: 1.75; fill: #ffffff; }
+    }
+    @keyframes stepGlow5 {
+      0%, 67% { stroke: #cbd5e1; stroke-width: 1.75; fill: #ffffff; }
+      68%, 83% { stroke: #15803d; stroke-width: 3; fill: #f0fdf4; }
+      84%, 100% { stroke: #cbd5e1; stroke-width: 1.75; fill: #ffffff; }
+    }
+    @keyframes stepGlow6 {
+      0%, 84% { stroke: #cbd5e1; stroke-width: 1.75; fill: #ffffff; }
+      85%, 100% { stroke: #15803d; stroke-width: 3; fill: #f0fdf4; }
+    }
+  </style>
+
+  <rect x="4" y="4" width="952" height="312" rx="10" class="bg" />
+  <rect x="20" y="18" width="920" height="38" rx="6" class="header" />
+  <text x="36" y="42" class="title">6-STAGE MANDATORY HUMAN-IN-THE-LOOP DEBLOAT WORKFLOW (SEQUENTIAL ANIMATION)</text>
+
+  <!-- Row 1: Steps 1, 2, 3 -->
+  <path d="M 304 122 L 338 122" class="connector-active" />
+  <path d="M 622 122 L 656 122" class="connector-active" />
+  <!-- Connector from Step 3 down to Step 4 -->
+  <path d="M 798 172 L 798 192 L 162 192 L 162 204" class="connector-active" />
+
+  <!-- Step 1 -->
+  <rect x="20" y="72" width="284" height="100" rx="8" class="step-box highlight-1" />
+  <rect x="34" y="86" width="58" height="20" rx="4" fill="#0f172a" />
+  <text x="42" y="100" class="step-num">STEP 1</text>
+  <text x="102" y="101" class="step-title">Discover &amp; Profile Device</text>
+  <text x="34" y="124" class="step-desc">Inspect USB/Wireless state, OEM skin,</text>
+  <text x="34" y="140" class="step-desc">Android SDK, RAM/CPU, and user 0 apps.</text>
+  <text x="34" y="158" class="step-cmd">list_devices -&gt; get_device_profile</text>
+
+  <!-- Step 2 -->
+  <rect x="338" y="72" width="284" height="100" rx="8" class="step-box highlight-2" />
+  <rect x="352" y="86" width="58" height="20" rx="4" fill="#0f172a" />
+  <text x="360" y="100" class="step-num">STEP 2</text>
+  <text x="420" y="101" class="step-title">Sync &amp; 4-Tier Classify</text>
+  <text x="352" y="124" class="step-desc">Cross-check UAD-NG, AppManager, Canta</text>
+  <text x="352" y="140" class="step-desc">&amp; hard-protected rules (Unsafe locked).</text>
+  <text x="352" y="158" class="step-cmd">sync_debloat_lists -&gt; classify_apps</text>
+
+  <!-- Step 3 -->
+  <rect x="656" y="72" width="284" height="100" rx="8" class="step-box highlight-3" />
+  <rect x="670" y="86" width="58" height="20" rx="4" fill="#0f172a" />
+  <text x="678" y="100" class="step-num">STEP 3</text>
+  <text x="738" y="101" class="step-title">Immutable SHA-256 Plan</text>
+  <text x="670" y="124" class="step-desc">Freeze package list, actions &amp; device</text>
+  <text x="670" y="140" class="step-desc">fingerprint into a hashed JSON plan.</text>
+  <text x="670" y="158" class="step-cmd">plan_removal (locks planHash)</text>
+
+  <!-- Row 2: Steps 4, 5, 6 -->
+  <path d="M 304 252 L 338 252" class="connector-active" />
+  <path d="M 622 252 L 656 252" class="connector-active" />
+
+  <!-- Step 4 -->
+  <rect x="20" y="202" width="284" height="100" rx="8" class="step-box highlight-4" />
+  <rect x="34" y="216" width="58" height="20" rx="4" fill="#b45309" />
+  <text x="42" y="230" class="step-num">STEP 4</text>
+  <text x="102" y="231" class="step-title">Human Out-of-Band Gate</text>
+  <text x="34" y="254" class="step-desc">User types confirmation phrase in CLI</text>
+  <text x="34" y="270" class="step-desc">or Web Console for a 10-min token.</text>
+  <text x="34" y="288" class="step-cmd">npx tsx src/index.ts approve &lt;id&gt;</text>
+
+  <!-- Step 5 -->
+  <rect x="338" y="202" width="284" height="100" rx="8" class="step-box highlight-5" />
+  <rect x="352" y="216" width="58" height="20" rx="4" fill="#15803d" />
+  <text x="360" y="230" class="step-num">STEP 5</text>
+  <text x="420" y="231" class="step-title">APK Backup &amp; Execution</text>
+  <text x="352" y="254" class="step-desc">Pulls APK + SHA-256 manifest first,</text>
+  <text x="352" y="270" class="step-desc">then runs allowlisted --user 0 cmd.</text>
+  <text x="352" y="288" class="step-cmd">execute_plan (dryRun: false + token)</text>
+
+  <!-- Step 6 -->
+  <rect x="656" y="202" width="284" height="100" rx="8" class="step-box highlight-6" />
+  <rect x="670" y="216" width="58" height="20" rx="4" fill="#15803d" />
+  <text x="678" y="230" class="step-num">STEP 6</text>
+  <text x="738" y="231" class="step-title">Health Check &amp; Restore</text>
+  <text x="670" y="254" class="step-desc">Verifies SystemUI/Bootanim, writes</text>
+  <text x="670" y="270" class="step-desc">.sh/.ps1 restore scripts &amp; audit hash.</text>
+  <text x="670" y="288" class="step-cmd">verify_audit_log &amp; generate_report</text>
+</svg>

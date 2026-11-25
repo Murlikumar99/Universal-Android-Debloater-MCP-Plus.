@@ -1,0 +1,39 @@
+{
+  "name": "android-debloater-mcp",
+  "version": "1.0.0",
+  "description": "Universal Android Debloater Model Context Protocol (MCP) Server over ADB",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "android-debloater-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "data",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --format=esm --packages=external --banner:js=\"#!/usr/bin/env node\" --outfile=dist/index.js",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "setup-clients": "node scripts/setup-clients.mjs",
+    "test": "npm run build && tsx --test test/unit/core.test.ts test/integration/flows.test.ts test/unit/apiSecurity.test.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "dotenv": "^17.2.3",
+    "pino": "^10.4.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.2"
+  }
+}

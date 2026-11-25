@@ -1,0 +1,64 @@
+/**
+ * OpenDesign Design Tokens — Universal Android Debloater MCP
+ * Specification: /design/DESIGN.md
+ * Reference: https://github.com/nexu-io/open-design
+ */
+
+:root {
+  /* Surfaces & Canvases */
+  --od-bg: #07090e;
+  --od-surface: #0d1117;
+  --od-surface-subtle: #121722;
+  --od-surface-elevated: #161c27;
+  --od-surface-card: #0a0e14;
+  --od-surface-code: #080c12;
+
+  /* Typography Colors */
+  --od-fg: #ffffff;
+  --od-fg-muted: #8b949e;
+  --od-fg-dim: #64748b;
+  --od-fg-inverse: #000000;
+
+  /* Borders & Dividers */
+  --od-border: rgba(255, 255, 255, 0.08);
+  --od-border-subtle: rgba(255, 255, 255, 0.05);
+  --od-border-hover: rgba(255, 255, 255, 0.16);
+  --od-border-focus: #ccff00;
+
+  /* Brand Accents */
+  --od-accent: #ccff00;
+  --od-accent-hover: #b8e600;
+  --od-accent-subtle: rgba(204, 255, 0, 0.12);
+  --od-accent-border: rgba(204, 255, 0, 0.35);
+  --od-accent-fg: #000000;
+
+  /* Safety Classification & Status Tokens */
+  --od-safe: #4ade80;
+  --od-safe-bg: rgba(74, 222, 128, 0.12);
+  --od-safe-border: rgba(74, 222, 128, 0.25);
+
+  --od-prob: #facc15;
+  --od-prob-bg: rgba(250, 204, 21, 0.12);
+  --od-prob-border: rgba(250, 204, 21, 0.25);
+
+  --od-risk: #fb923c;
+  --od-risk-bg: rgba(251, 146, 60, 0.12);
+  --od-risk-border: rgba(251, 146, 60, 0.25);
+
+  --od-unsafe: #f87171;
+  --od-unsafe-bg: rgba(248, 113, 113, 0.12);
+  --od-unsafe-border: rgba(248, 113, 113, 0.25);
+
+  --od-warn: #f59e0b;
+  --od-warn-bg: rgba(245, 158, 11, 0.08);
+  --od-warn-border: rgba(245, 158, 11, 0.28);
+
+  /* Typography Families */
+  --od-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --od-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Transitions & Shadows */
+  --od-transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  --od-shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  --od-shadow-glow: 0 0 25px rgba(204, 255, 0, 0.15);
+}

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="100%" height="380" role="img" aria-label="Animated CleanYourTV Android TV &amp; Google TV Debloating Pipeline">
+  <style>
+    .bg { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+    .header { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; }
+    .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.75; }
+    .card-bloat { fill: #fef2f2; stroke: #dc2626; stroke-width: 1.5; }
+    .card-safe { fill: #f0fdf4; stroke: #16a34a; stroke-width: 1.5; }
+    .card-clean { fill: #f0f9ff; stroke: #0284c7; stroke-width: 1.5; }
+    .title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 14px; font-weight: 700; fill: #0f172a; }
+    .subtitle { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 12px; font-weight: 700; fill: #0f172a; }
+    .label { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 10.5px; fill: #475569; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #0f172a; }
+    .mono-red { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; fill: #dc2626; }
+    .mono-green { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; fill: #16a34a; }
+    .mono-blue { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; fill: #0284c7; }
+    .wire { stroke: #cbd5e1; stroke-width: 2; fill: none; }
+    .wire-active { stroke: #0284c7; stroke-width: 2.25; stroke-dasharray: 6 6; fill: none; animation: wireFlow 1.4s linear infinite; }
+    .wire-kill { stroke: #dc2626; stroke-width: 2.25; stroke-dasharray: 6 6; fill: none; animation: wireFlow 1.2s linear infinite; }
+    .badge { fill: #0f172a; }
+    .badge-text { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; fill: #ffffff; }
+
+    @keyframes wireFlow {
+      to { stroke-dashoffset: -24; }
+    }
+    .pulse-dot { fill: #0284c7; animation: pulseGlow 1.8s ease-in-out infinite; }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.95); }
+    }
+  </style>
+
+  <!-- Frame -->
+  <rect x="4" y="4" width="952" height="372" rx="10" class="bg" />
+
+  <!-- Header -->
+  <rect x="20" y="18" width="920" height="40" rx="6" class="header" />
+  <circle cx="38" cy="38" r="5" class="pulse-dot" />
+  <text x="52" y="43" class="title">CLEANYOURTV PIPELINE — ANDROID TV &amp; GOOGLE TV AD STRIPPING &amp; ACR REMOVAL</text>
+  <rect x="760" y="26" width="166" height="24" rx="4" class="badge" />
+  <text x="770" y="42" class="badge-text">CLEANYOURTV INSPIRED</text>
+
+  <!-- Step 1: Wireless Connection to TV -->
+  <rect x="20" y="74" width="210" height="280" rx="8" class="panel" />
+  <text x="34" y="98" class="subtitle">1. Wi-Fi ADB Link</text>
+  <text x="34" y="118" class="mono">adb connect &lt;TV_IP&gt;:5555</text>
+  <text x="34" y="136" class="label">Zero cables required. Links</text>
+  <text x="34" y="152" class="label">directly over local Wi-Fi.</text>
+
+  <rect x="32" y="174" width="186" height="88" rx="6" class="card-clean" />
+  <text x="42" y="194" class="subtitle">Supported TV Hardware</text>
+  <text x="42" y="210" class="label">- Chromecast with Google TV</text>
+  <text x="42" y="226" class="label">- Sony Bravia 4K TV</text>
+  <text x="42" y="242" class="label">- Xiaomi / Redmi PatchWall</text>
+  <text x="42" y="256" class="label">- TCL / Hisense / Shield TV</text>
+
+  <text x="34" y="292" class="mono-blue">ro.build.characteristics=tv</text>
+  <text x="34" y="310" class="label">Auto-detects TV form factor</text>
+  <text x="34" y="326" class="label">&amp; leanback permissions.</text>
+
+  <!-- Animated Wire 1 -> 2 -->
+  <path d="M 230 180 L 268 180" class="wire" />
+  <path d="M 230 180 L 268 180" class="wire-active" />
+
+  <!-- Step 2: Bloat & Tracking Detection -->
+  <rect x="268" y="74" width="310" height="280" rx="8" class="panel" />
+  <text x="282" y="98" class="subtitle">2. Target Bloat vs. Protected TV Core</text>
+
+  <!-- Stripped Ad Packages -->
+  <rect x="280" y="114" width="286" height="116" rx="6" class="card-bloat" />
+  <text x="292" y="134" class="mono-red">[DISMISSED / DISABLED ADS &amp; ACR]</text>
+  <text x="292" y="152" class="mono">com.google.android.tvrecommendations</text>
+  <text x="292" y="168" class="mono">com.google.android.videos</text>
+  <text x="292" y="184" class="mono">com.samba.tv (ACR tracking)</text>
+  <text x="292" y="200" class="mono">com.mitv.advertise / com.tcl.customad</text>
+  <text x="292" y="216" class="mono">com.sony.dtv.recommendations</text>
+
+  <!-- Protected TV Essentials -->
+  <rect x="280" y="240" width="286" height="98" rx="6" class="card-safe" />
+  <text x="292" y="258" class="mono-green">[HARD-PROTECTED TV ESSENTIALS]</text>
+  <text x="292" y="274" class="mono">com.google.android.apps.mediashell (Cast)</text>
+  <text x="292" y="290" class="mono">com.google.android.tv.remote.service (Remote)</text>
+  <text x="292" y="306" class="mono">com.android.tv.settings (TV Settings)</text>
+  <text x="292" y="322" class="mono">com.android.tv.inputs (HDMI Inputs)</text>
+
+  <!-- Animated Wire 2 -> 3 -->
+  <path d="M 578 180 L 616 180" class="wire" />
+  <path d="M 578 180 L 616 180" class="wire-kill" />
+
+  <!-- Step 3: Reversible Debloat & Result -->
+  <rect x="616" y="74" width="324" height="280" rx="8" class="panel" />
+  <text x="630" y="98" class="subtitle">3. Clean TV Result (Zero Ads / 60 FPS)</text>
+
+  <rect x="628" y="114" width="300" height="96" rx="6" class="card-clean" />
+  <text x="638" y="134" class="subtitle">Reversible Execution (--user 0)</text>
+  <text x="638" y="152" class="mono">pm disable-user --user 0 &lt;pkg&gt;</text>
+  <text x="638" y="170" class="label">Original APK stays in system ROM.</text>
+  <text x="638" y="186" class="label">Reversible anytime in 1 click.</text>
+
+  <rect x="628" y="222" width="300" height="116" rx="6" class="card-safe" />
+  <text x="638" y="242" class="subtitle">Real-World TV Performance Delta</text>
+  <text x="638" y="260" class="mono-green">+350 MB to +700 MB Free RAM</text>
+  <text x="638" y="276" class="label">Zero sponsored autoplay video rows</text>
+  <text x="638" y="292" class="label">Zero ACR surveillance on HDMI ports</text>
+  <text x="638" y="308" class="label">Ultra-fast remote navigation &amp; app launch</text>
+  <text x="638" y="324" class="mono-blue">Works with Projectivy / Minimal Launcher</text>
+</svg>

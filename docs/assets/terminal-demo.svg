@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="100%" height="360" role="img" aria-label="Animated CLI Approval and Execution Terminal Walkthrough">
+  <style>
+    .term-frame { fill: #0f172a; stroke: #334155; stroke-width: 2; }
+    .term-bar { fill: #1e293b; }
+    .term-title { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; fill: #e2e8f0; }
+    .cmd { font-family: 'JetBrains Mono', monospace; font-size: 12px; fill: #f8fafc; font-weight: 600; }
+    .out { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; fill: #94a3b8; }
+    .ok { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; fill: #4ade80; font-weight: 600; }
+    .warn { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; fill: #fbbf24; font-weight: 600; }
+    .info { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; fill: #38bdf8; }
+
+    .line-1 { opacity: 0; animation: showLine 12s infinite 0.3s; }
+    .line-2 { opacity: 0; animation: showLine 12s infinite 1.2s; }
+    .line-3 { opacity: 0; animation: showLine 12s infinite 2.4s; }
+    .line-4 { opacity: 0; animation: showLine 12s infinite 3.6s; }
+    .line-5 { opacity: 0; animation: showLine 12s infinite 4.8s; }
+    .line-6 { opacity: 0; animation: showLine 12s infinite 6.2s; }
+    .line-7 { opacity: 0; animation: showLine 12s infinite 7.6s; }
+    .line-8 { opacity: 0; animation: showLine 12s infinite 9.0s; }
+
+    @keyframes showLine {
+      0% { opacity: 0; }
+      5%, 92% { opacity: 1; }
+      98%, 100% { opacity: 0; }
+    }
+  </style>
+
+  <rect x="4" y="4" width="952" height="352" rx="10" class="term-frame" />
+  <rect x="6" y="6" width="948" height="34" rx="8" class="term-bar" />
+  <circle cx="26" cy="23" r="5" fill="#64748b" />
+  <circle cx="44" cy="23" r="5" fill="#64748b" />
+  <circle cx="62" cy="23" r="5" fill="#64748b" />
+  <text x="86" y="27" class="term-title">terminal — android-debloater-mcp out-of-band approval &amp; execution walkthrough</text>
+
+  <g class="line-1">
+    <text x="24" y="66" class="cmd">$ npx tsx src/index.ts approve plan_1793816764025_5bb6ef</text>
+  </g>
+
+  <g class="line-2">
+    <text x="24" y="92" class="info">[PLAN SUMMARY] Device: samsung SM-S928B (R5CW918Z2KL) | Packages: 2 | User: --user 0</text>
+    <text x="24" y="110" class="out">  1. pm uninstall -k --user 0 com.samsung.android.game.gamehome  [Rating: Safe]</text>
+    <text x="24" y="128" class="out">  2. pm disable-user --user 0 com.facebook.services               [Rating: Safe]</text>
+    <text x="24" y="146" class="out">  SHA-256 Plan Digest: d25659fce1c4d5ea3b7ef29c87181290ff967251dac844db6bf6903dc4441fbd</text>
+  </g>
+
+  <g class="line-3">
+    <text x="24" y="174" class="warn">Type exact confirmation phrase to authorize: APPROVE SM-S928B 2 PACKAGES</text>
+  </g>
+
+  <g class="line-4">
+    <text x="24" y="196" class="cmd">&gt; APPROVE SM-S928B 2 PACKAGES</text>
+  </g>
+
+  <g class="line-5">
+    <text x="24" y="222" class="ok">[APPROVED] Single-Use Token Issued (TTL: 600s):</text>
+    <text x="24" y="240" class="info">  tok_1793816764665_56093d09.uad_tok_8eaa2a1c8eb94adfb8fc50fff78a046622902e519a2dd77a</text>
+  </g>
+
+  <g class="line-6">
+    <text x="24" y="268" class="out">[EXECUTOR] 1/3 Pulling APK + metadata backup &amp; verifying SHA-256 checksums... OK</text>
+    <text x="24" y="286" class="out">[EXECUTOR] 2/3 Running allowlisted --user 0 commands via execFile... OK</text>
+  </g>
+
+  <g class="line-7">
+    <text x="24" y="308" class="ok">[HEALTH CHECK] init.svc.bootanim=stopped | SystemUI=alive | PackageManager=responsive</text>
+  </g>
+
+  <g class="line-8">
+    <text x="24" y="332" class="ok">[AUDIT CHAIN] Appended entry #30 (SHA-256 chain verified) + generated restore-.sh / .ps1</text>
+  </g>
+</svg>
